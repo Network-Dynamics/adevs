@@ -49,6 +49,13 @@ template <class T> class Bag
 		class iterator
 		{
 			public:
+				/* make the bag STL compliant */
+				typedef std::bidirectional_iterator_tag iterator_category;^M
+				typedef T value_type;^M
+				typedef T& reference;^M
+				typedef T* pointer;^M
+				typedef ptrdiff_t difference_type;^M
+
 				iterator(unsigned int start = 0, T* b = NULL):
 				i(start),b(b){} 
 				iterator(const iterator& src):
